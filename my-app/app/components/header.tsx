@@ -1,30 +1,34 @@
-import  Link  from 'next/link';
+import Link from 'next/link';
 
 export function Header() {
+  const myLinks = [
+    { name: 'About', href: '/' },
+    { name: 'services', href: '/' },
+    { name: 'About me', href: '/' },
+    { name: 'contact us', href: '/' },
+    { name: 'Fellows', href: '/fellows' },
+  ];
+
   return (
     <>
 
-      <div className='flex  justify-center flex -column bg-gray-300 w-3/4 max-w-4xl h-16 space -x-2 py-0 px-0 md:h-15  mx-auto pb-0 mb-0 bg- gray-300 text -black float-center '>
+      <div className='flex justify-between flex-wrap items-center py-4 px-8 bg-gray-300'>
 
-        <nav className="flex  gap-8 justify-center w-3/4  bg-gray-300 items-center ">
-            <Link href='/' className="text-black no-underline flex flex-col mx-auto my-2">
-                Albert
+        <nav className="flex flex-wrap  gap-4">
+          {myLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="hover:bg-red-300 px-2 py-1 rounded-md text-black no-underline flex flex-col justify-between mx-auto"
+            >
+              {link.name}
             </Link>
-            <Link href='/' className="text-black no-underline flex flex-col mx-auto my-2">
-                services
-            </Link>
-            <Link href='/' className="text-black no-underline flex flex-col mx-auto my-2">
-                case studies
-            </Link>
-                <Link href='/' className="text-black no-underline flex flex-col mx-auto my-2">
-                About me
-                </Link>
-                <Link href='/' className="text-black no-underline flex flex-col mx-auto my-2">contact us</Link>
-                
-        
-        <button className="bg-gray-300 text-black border  justify-end radius-25px float- right px-2 py-1  gap-8 my-4 ml-10 mx-auto rounded sm-4px">see my work</button>
+          ))}
         </nav>
-        </div>
+        <button className="bg-gray-500  text-white  rounded-full border p-2">
+          See my work
+        </button>
+      </div>
 
 
 
@@ -45,7 +49,7 @@ export function Header() {
 
 
 
-      
+
 
 
 
