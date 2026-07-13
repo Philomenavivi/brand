@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export function Header() {
+export function header() {
   const myLinks = [
     { name: 'About', href: '/' },
     { name: 'services', href: '/' },
